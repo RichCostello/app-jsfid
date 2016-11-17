@@ -2,10 +2,8 @@ var FiddleCatcher = function() {
     return {
         getFiddles: function(userName, callback) {
             $.ajax({
-                xhrFields: {
-                    withCredentials: true
-                },
                 type: 'GET',
+                headers: {"X-My-Custom-Header": "some value"},
                 url: 'https://jsfiddle.net/api/user/' + userName + '/demo/list.json?&start=0&sort=date&start=0&limit=99999&order=desc'
             }).done(function(data) {
                 var json = jQuery.parseJSON(data);
