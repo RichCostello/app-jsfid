@@ -2,7 +2,7 @@ var FiddleCatcher = function() {
     return {
         getFiddles: function(userName, callback) {
             $.ajax({
-                url: 'http://jsfiddle.net/api/user/' + userName + '/demo/list.json?&start=0&sort=date&start=0&limit=99999&order=desc'
+                url: 'https://jsfiddle.net/api/user/' + userName + '/demo/list.json?&start=0&sort=date&start=0&limit=99999&order=desc'
             }).done(function(data) {
                 var json = jQuery.parseJSON(data);
                 //console.log(json);
